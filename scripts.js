@@ -93,11 +93,18 @@ function isWinner() {
     let allPossbilities = [row1, row2, row3, column1, column2, column3, diagonal1, diagonal2];
 
     for (let arrayIndex = 0; arrayIndex < allPossbilities.length; arrayIndex++)
-        if (((allPossbilities[arrayIndex][0].innerText == "X") || (allPossbilities[arrayIndex][0].innerText == "O")) && (allPossbilities[arrayIndex][0].innerText == allPossbilities[arrayIndex][1].innerText) && (allPossbilities[arrayIndex][1].innerText == allPossbilities[arrayIndex][2].innerText))
+        if (((allPossbilities[arrayIndex][0].innerText == "X") || (allPossbilities[arrayIndex][0].innerText == "O")) && (allPossbilities[arrayIndex][0].innerText == allPossbilities[arrayIndex][1].innerText) && (allPossbilities[arrayIndex][1].innerText == allPossbilities[arrayIndex][2].innerText)) {
+            colorWinningCells(allPossbilities[arrayIndex]);
             return true;
-
+        }
 
     return false;
+}
+
+function colorWinningCells(winningCells) {
+    for (let index = 0; index < winningCells.length; index++)
+        winningCells[index].style.backgroundColor = "rgba(8, 202, 18, 0.767)";
+
 }
 
 function playAgain() {
