@@ -1,15 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        td {
+            height: 250px;
+        }
+        
+        button {
+            height: 100%;
+            width: 100%;
+            font-size: 100px;
+        }
+        
+        .biggerFontPlease {
+            font-size: 40px;
+        }
+    </style>
 </head>
+
 <body>
-    <b>Next Player:</b> <lable id='next-lbl'>  </lable>
+    <b class='biggerFontPlease'>Next Player: </b>
+    <label class='biggerFontPlease' id='next-lbl'> </label>
     <br>
-    <table id='gameboard' border="1"> 
+    <table id='gameboard' border="1" style="width:50%">
         <tr>
             <td id='c1'></td>
             <td id='c2'></td>
