@@ -16,8 +16,8 @@ createGameBoard(0);
 function createGameBoard(i) {
     // Programatically add a button with square brackets enclosing an empty space to each cell in the gameboard
     let newButton = document.createElement('button');
-    let blankButton = document.createTextNode("[ ]");
-    newButton.appendChild(blankButton);
+    newButton.innerText = "[ ]";
+    newButton.setAttribute("class", "tableMember");
     let idList = ["c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9"];
     document.getElementById(idList[i]).appendChild(newButton);
     if (i < idList.length - 1)
@@ -50,6 +50,8 @@ function takeCell(event) {
         let textContent = document.createTextNode("The Game Is Over, No More Moves Can Be Made");
         heading1.appendChild(textContent);
         gameOverLabel.appendChild(heading1);
+
+        playAgain();
     }
 
     // I'll leave declaring the winner for your intrinsic motivation, it's not required for this assignment 
@@ -61,6 +63,8 @@ function takeCell(event) {
         gameOverLabel.appendChild(heading1);
         for (let i = 0; i < btns.length; i++)
             btns[i].disabled = true;
+
+        playAgain();
     }
 
 
@@ -94,5 +98,18 @@ function isWinner() {
 
 
     return false;
+}
 
+function playAgain() {
+    let playAgainButton = document.createElement('button');
+    playAgainButton.innerText = "Play Again?";
+    playAgainButton.setAttribute("onClick", "reloadPage()");
+    playAgainButton.className = "reload biggerFontPlease";
+
+
+    document.body.appendChild(playAgainButton);
+}
+
+function reloadPage() {
+    window.location.reload();
 }
