@@ -5,8 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ahmad's TicTacToe</title>
     <style>
+        body {
+            background-color: rgba(27, 40, 218, 0.541);
+        }
+        
+        table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
         td {
             height: 250px;
         }
@@ -21,19 +30,35 @@
             font-size: 40px;
         }
         
-        .reload {
+        b.player {
             position: absolute;
-            left: 60%;
+            left: 4%;
             top: 40%;
+        }
+        
+        label.player {
+            position: absolute;
+            left: 16%;
+            top: 40.5%;
+        }
+        
+        .reload {
+            position: fixed;
+            left: 42.5%;
+            top: 36%;
             height: 15%;
             width: 15%;
+        }
+        
+        #game-over-lbl {
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
-    <b class='biggerFontPlease'>Next Player: </b>
-    <label class='biggerFontPlease' id='next-lbl'> </label>
+    <b class='biggerFontPlease player'>Next Player: </b>
+    <label class='biggerFontPlease player' id='next-lbl'> </label>
     <br>
     <table id='gameboard' border="1" style="width:50%">
         <tr>
